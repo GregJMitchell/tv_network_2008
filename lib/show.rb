@@ -25,4 +25,12 @@ class Show
     end
     actor[-1].actor
   end
+
+  def actors
+    actor = []
+    @characters.each do |character|
+      actor << character.actor
+    end
+    actor
+  end
 end
