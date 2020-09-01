@@ -13,4 +13,16 @@ class Show
     end
     total
   end
+
+  def highest_paid_actor
+    salary = 0
+    actor = []
+    @characters.each do |character|
+      if character.salary > salary
+        salary = character.salary
+        actor << character
+      end
+    end
+    actor[-1].actor
+  end
 end
