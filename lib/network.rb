@@ -33,8 +33,13 @@ class Network
     hash = Hash.new
     @shows.each do |show|
       show.actors.each do |actor|
-        hash[actor] = show.characters.map {|character| actor == character.name}
+        if hash.has_key?(actor)
+          hash[actor] << show
+        else
+          hash.store(actor, [show])
+        end
       end
     end
+    hash
   end
 end
