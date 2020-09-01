@@ -28,4 +28,13 @@ class Network
     end
     hash
   end
+
+  def shows_by_actor
+    hash = Hash.new
+    @shows.each do |show|
+      show.actors.each do |actor|
+        hash[actor] = show.characters.map {|character| actor == character.name}
+      end
+    end
+  end
 end
