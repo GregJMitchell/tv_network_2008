@@ -20,4 +20,12 @@ class Network
     end
     main_chars
   end
+
+  def actors_by_show
+    hash = Hash.new
+    @shows.each do |show|
+      hash[show] = show.actors
+    end
+    hash
+  end
 end
